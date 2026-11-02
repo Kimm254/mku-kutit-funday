@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MKU KUTIT Funday — fun, music, games and good vibes at MKU Graduation Square.">
+  <title>MKU KUTIT FUNDAY</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">K</span><span>MKU <b>KUTIT</b></span></a>
+    <a class="nav-cta" href="#register">Get your spot</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">CAMPUS • COMMUNITY • GOOD VIBES</p>
+        <h1>MKU KUTIT<br><span>FUNDAY</span></h1>
+        <p class="hero-copy">Fun. Vibes. Together. Come through and make memories with fellow MKU students!</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#register">Join the fun</a>
+          <a class="button ghost" href="#activities">Explore activities</a>
+        </div>
+      </div>
+      <div class="price-sticker"><small>ENTRY</small><strong>KSh 200</strong><small>PER PERSON</small></div>
+    </section>
+
+    <section class="event-strip">
+      <div><span class="mini-icon">⌖</span><span><small>VENUE</small><b>MKU Graduation Square</b></span></div>
+      <div><span class="mini-icon">♪</span><span><small>THE VIBE</small><b>Music, games &amp; fun</b></span></div>
+      <div><span class="mini-icon">200</span><span><small>ENTRY</small><b>KSh 200 per person</b></span></div>
+    </section>
+
+    <section class="section" id="activities">
+      <div class="section-heading">
+        <p class="eyebrow">WHAT'S HAPPENING</p>
+        <h2>Bring your energy.</h2>
+        <p>There's something for everyone. Come ready to participate, cheer and have a great time.</p>
+      </div>
+      <div class="activity-grid">
+        <article class="activity-card"><div class="activity-icon">♫</div><h3>DJ &amp; Music</h3><p>Great sounds and a lively dance floor.</p></article>
+        <article class="activity-card"><div class="activity-icon">✦</div><h3>Dance Battles</h3><p>Show your moves and cheer on your team.</p></article>
+        <article class="activity-card"><div class="activity-icon">⚑</div><h3>Team Games</h3><p>Friendly challenges, teamwork and laughs.</p></article>
+        <article class="activity-card"><div class="activity-icon">★</div><h3>Fun Challenges</h3><p>Take part, make memories and enjoy the day.</p></article>
+      </div>
+    </section>
+
+    <section class="register-section" id="register">
+      <div class="register-info">
+        <p class="eyebrow">SAVE YOUR SPOT</p>
+        <h2>Be part of<br>the fun.</h2>
+        <p>Register your details below. Entry is <strong>KSh 200</strong> per person.</p>
+        <div class="venue-line">⌖ &nbsp; MKU Graduation Square</div>
+      </div>
+      <form class="register-card" method="POST" action="/">
+        <h3>Funday registration</h3>
+        <label for="name">Full name</label>
+        <input id="name" name="name" placeholder="Enter your name" required>
+        <label for="phone">M-Pesa phone number</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="07XXXXXXXX" required>
+        <div class="total-row"><span>Entry fee</span><strong>KSh 200</strong></div>
+        <button class="button primary full" type="submit">Continue to M-Pesa</button>
+        <p class="small-note">M-Pesa STK Push is not connected in this starter version. No payment will be requested yet.</p>
+        {% if message %}<div class="notice" role="status">{{ message }}</div>{% endif %}
+      </form>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">K</span><span>MKU <b>KUTIT</b></span></a><p>Good people. Great energy. Unforgettable memories.</p><small>© MKU KUTIT Funday</small></footer>
+</body>
+</html>
