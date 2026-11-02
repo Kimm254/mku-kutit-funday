@@ -386,13 +386,26 @@ setInterval(updateCountdown, 1000);
 
 </body>
 </html>
-from flask import Flask, render_template
+<section class="contact">
+    <h2 class="section-title">
+        CONTACT <span>ORGANIZERS</span>
+    </h2>
 
-app = Flask(__name__)
+    <div class="cards">
+        <div class="card">
+            <div class="emoji">👤</div>
+            <h3>Kemboi</h3>
+            <p>Chairperson</p>
+            <p>+254 710 190854</p>
 
-@app.route("/")
-def home():
-    return render_template("index.html")
+            <a class="btn" href="tel:+254710190854">
+                Call Chairperson
+            </a>
 
-if __name__ == "__main__":
-    app.run(debug=True)
+            <a class="btn btn-outline"
+               href="https://wa.me/254710190854">
+                WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
