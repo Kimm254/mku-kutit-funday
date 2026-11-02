@@ -1,74 +1,649 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MKU KUTIT Funday — fun, music, games and good vibes at MKU Graduation Square.">
-  <title>MKU KUTIT FUNDAY</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+
+<title>MKU KUTIT FUNDAY 2026</title>
+
+<meta name="description" content="MKU KUTIT FUNDAY, 7 November 2026, MKU Graduation Square. Music, entertainment, games and fun.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #090909;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    background: #101010;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #292929;
+}
+
+.logo {
+    color: #ffb000;
+    font-size: 19px;
+    font-weight: 900;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover { color: #ffb000; }
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    background:
+    radial-gradient(ellipse at center, #57300c 0%, #17100a 45%, #080808 100%);
+}
+
+.hero-content { max-width: 850px; }
+
+.tag {
+    color: #ffb000;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(42px, 9vw, 90px);
+    line-height: 1.1;
+    margin: 20px 0;
+    font-weight: 900;
+}
+
+.gold { color: #ffb000; }
+
+.hero p {
+    color: #ddd;
+    margin: 15px auto;
+    max-width: 650px;
+}
+
+.event-date {
+    color: #ffb000;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffb000;
+    color: #111;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px 4px;
+}
+
+.btn:hover { background: white; }
+
+.outline {
+    background: transparent;
+    color: #ffb000;
+    border: 1px solid #ffb000;
+}
+
+section {
+    padding: 75px 7%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #bbb;
+    max-width: 700px;
+    margin: auto;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.time-box {
+    background: #191919;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 75px;
+}
+
+.time-box strong {
+    display: block;
+    color: #ffb000;
+    font-size: 28px;
+}
+
+.time-box small { color: #aaa; }
+
+.dark-section { background: #111; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 27px 20px;
+}
+
+.emoji { font-size: 38px; }
+
+.card h3 {
+    color: #ffb000;
+    margin: 12px 0;
+}
+
+.card p { color: #bbb; }
+
+.register-section {
+    background: linear-gradient(135deg, #211606, #101010);
+}
+
+.form-container {
+    max-width: 550px;
+    margin: 30px auto 0;
+    background: #171717;
+    border: 1px solid #393939;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: left;
+}
+
+.form-container label {
+    display: block;
+    margin: 16px 0 7px;
+    color: #eee;
+    font-size: 14px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #090909;
+    color: white;
+    outline: none;
+    font-size: 15px;
+}
+
+.form-container input:focus {
+    border-color: #ffb000;
+}
+
+.consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin: 20px 0;
+    color: #bbb;
+    font-size: 12px;
+}
+
+.consent input {
+    width: auto;
+    margin-top: 4px;
+}
+
+.form-container button {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.payment-section {
+    background: #101010;
+}
+
+.payment-card {
+    max-width: 570px;
+    margin: 30px auto;
+    padding: 30px 20px;
+    background: #1a1a1a;
+    border: 1px solid #484848;
+    border-radius: 16px;
+}
+
+.payment-number {
+    color: #ffb000;
+    font-size: clamp(28px, 7vw, 42px);
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.payment-name {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.payment-label {
+    display: inline-block;
+    color: #111;
+    background: #ffb000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.note {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+.organizer {
+    background: #1a1a1a;
+    border: 1px solid #383838;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 400px;
+    margin: 25px auto;
+}
+
+.organizer h3 { color: #ffb000; }
+
+.organizer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    padding: 30px 15px;
+    text-align: center;
+    background: #050505;
+    color: #999;
+    font-size: 13px;
+}
+
+footer span { color: #ffb000; }
+
+@media(max-width: 600px) {
+    header { padding: 15px 4%; }
+    .logo { font-size: 14px; }
+    nav { gap: 9px; }
+    nav a { font-size: 11px; }
+    section { padding: 55px 5%; }
+    .section-title { font-size: 27px; }
+    .form-container { padding: 20px; }
+}
+</style>
 </head>
+
 <body>
-  <header class="topbar">
-    <a class="brand" href="#"><span class="brand-mark">K</span><span>MKU <b>KUTIT</b></span></a>
-    <a class="nav-cta" href="#register">Get your spot</a>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="eyebrow">CAMPUS • COMMUNITY • GOOD VIBES</p>
-        <h1>MKU KUTIT<br><span>FUNDAY</span></h1>
-        <p class="hero-copy">Fun. Vibes. Together. Come through and make memories with fellow MKU students!</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#register">Join the fun</a>
-          <a class="button ghost" href="#activities">Explore activities</a>
+<header>
+    <div class="logo">MKU KUTIT FUNDAY</div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#activities">Activities</a>
+        <a href="#register">Register</a>
+        <a href="#contacts">Contacts</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+
+        <div class="tag">THE EXPERIENCE • THE VIBES • THE MEMORIES</div>
+
+        <h1>MKU KUTIT <span class="gold">FUNDAY</span></h1>
+
+        <p>
+            One community. One experience. Unlimited vibes!
+            Come together for an amazing day of entertainment,
+            friendship, music and unforgettable memories.
+        </p>
+
+        <div class="event-date">07 NOVEMBER 2026</div>
+
+        <p>📍 MKU Graduation Square</p>
+
+        <div class="countdown">
+            <div class="time-box">
+                <strong id="days">00</strong>
+                <small>DAYS</small>
+            </div>
+            <div class="time-box">
+                <strong id="hours">00</strong>
+                <small>HOURS</small>
+            </div>
+            <div class="time-box">
+                <strong id="minutes">00</strong>
+                <small>MINUTES</small>
+            </div>
+            <div class="time-box">
+                <strong id="seconds">00</strong>
+                <small>SECONDS</small>
+            </div>
         </div>
-      </div>
-      <div class="price-sticker"><small>ENTRY</small><strong>KSh 200</strong><small>PER PERSON</small></div>
-    </section>
 
-    <section class="event-strip">
-      <div><span class="mini-icon">⌖</span><span><small>VENUE</small><b>MKU Graduation Square</b></span></div>
-      <div><span class="mini-icon">♪</span><span><small>THE VIBE</small><b>Music, games &amp; fun</b></span></div>
-      <div><span class="mini-icon">200</span><span><small>ENTRY</small><b>KSh 200 per person</b></span></div>
-    </section>
+        <a href="#register" class="btn">REGISTER NOW</a>
+        <a href="#payment" class="btn outline">PAYMENT DETAILS</a>
 
-    <section class="section" id="activities">
-      <div class="section-heading">
-        <p class="eyebrow">WHAT'S HAPPENING</p>
-        <h2>Bring your energy.</h2>
-        <p>There's something for everyone. Come ready to participate, cheer and have a great time.</p>
-      </div>
-      <div class="activity-grid">
-        <article class="activity-card"><div class="activity-icon">♫</div><h3>DJ &amp; Music</h3><p>Great sounds and a lively dance floor.</p></article>
-        <article class="activity-card"><div class="activity-icon">✦</div><h3>Dance Battles</h3><p>Show your moves and cheer on your team.</p></article>
-        <article class="activity-card"><div class="activity-icon">⚑</div><h3>Team Games</h3><p>Friendly challenges, teamwork and laughs.</p></article>
-        <article class="activity-card"><div class="activity-icon">★</div><h3>Fun Challenges</h3><p>Take part, make memories and enjoy the day.</p></article>
-      </div>
-    </section>
+    </div>
+</div>
 
-    <section class="register-section" id="register">
-      <div class="register-info">
-        <p class="eyebrow">SAVE YOUR SPOT</p>
-        <h2>Be part of<br>the fun.</h2>
-        <p>Register your details below. Entry is <strong>KSh 200</strong> per person.</p>
-        <div class="venue-line">⌖ &nbsp; MKU Graduation Square</div>
-      </div>
-      <form class="register-card" method="POST" action="/">
-        <h3>Funday registration</h3>
-        <label for="name">Full name</label>
-        <input id="name" name="name" placeholder="Enter your name" required>
-        <label for="phone">M-Pesa phone number</label>
-        <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="07XXXXXXXX" required>
-        <div class="total-row"><span>Entry fee</span><strong>KSh 200</strong></div>
-        <button class="button primary full" type="submit">Continue to M-Pesa</button>
-        <p class="small-note">M-Pesa STK Push is not connected in this starter version. No payment will be requested yet.</p>
-        {% if message %}<div class="notice" role="status">{{ message }}</div>{% endif %}
-      </form>
-    </section>
-  </main>
+<!-- ABOUT -->
+<section id="about">
 
-  <footer><a class="brand" href="#"><span class="brand-mark">K</span><span>MKU <b>KUTIT</b></span></a><p>Good people. Great energy. Unforgettable memories.</p><small>© MKU KUTIT Funday</small></footer>
+    <h2 class="section-title">ABOUT <span class="gold">THE FUNDAY</span></h2>
+
+    <p class="description">
+        MKU KUTIT FUNDAY is a celebration of togetherness,
+        entertainment, creativity and student talent.
+        It's a chance to connect, have fun and make memories
+        that last beyond the day.
+    </p>
+
+</section>
+
+<!-- ACTIVITIES -->
+<section class="dark-section" id="activities">
+
+    <h2 class="section-title">WHAT TO <span class="gold">EXPECT</span></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="emoji">🎧</div>
+            <h3>Music & DJs</h3>
+            <p>Great music, DJs and entertainment.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💃</div>
+            <h3>Dance & Talent</h3>
+            <p>Celebrate creativity and showcase talent.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🏆</div>
+            <h3>Games & Competitions</h3>
+            <p>Exciting games and friendly competitions.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🤝</div>
+            <h3>Networking</h3>
+            <p>Meet people, connect and create memories.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- REGISTRATION -->
+<section class="register-section" id="register">
+
+    <h2 class="section-title">
+        EVENT <span class="gold">REGISTRATION</span>
+    </h2>
+
+    <p class="description">
+        Fill in your details to register for MKU KUTIT FUNDAY 2026.
+    </p>
+
+    <div class="form-container">
+
+        <form action="/register" method="POST">
+
+            <label for="fullname">Full Name</label>
+            <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="Enter your full name"
+                maxlength="100"
+                autocomplete="name"
+                required>
+
+            <label for="regnumber">MKU Registration Number</label>
+            <input
+                type="text"
+                id="regnumber"
+                name="regnumber"
+                placeholder="Enter your registration number"
+                maxlength="50"
+                required>
+
+            <label for="phone">Phone Number</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="07XXXXXXXX or 01XXXXXXXX"
+                pattern="(07|01)[0-9]{8}"
+                maxlength="10"
+                autocomplete="tel"
+                required>
+
+            <div class="consent">
+                <input type="checkbox" id="consent" required>
+                <label for="consent">
+                    I agree that the event organizers may use
+                    these details to manage my Funday registration
+                    and contact me about the event.
+                </label>
+            </div>
+
+            <button type="submit" class="btn">
+                SUBMIT REGISTRATION
+            </button>
+
+        </form>
+
+        <p class="note">
+            Your details should only be accessible to authorized
+            event organizers. Do not submit someone else's details
+            without their permission.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PAYMENT -->
+<section class="payment-section" id="payment">
+
+    <h2 class="section-title">
+        M-PESA <span class="gold">PAYMENTS</span>
+    </h2>
+
+    <p class="description">
+        Payment details for MKU KUTIT FUNDAY 2026.
+    </p>
+
+    <div class="payment-card">
+
+        <div class="payment-label">POCHI LA BIASHARA</div>
+
+        <p class="note">Registered M-Pesa Name</p>
+
+        <div class="payment-name">Doreen Chepkoech</div>
+
+        <p class="note">Payment Phone Number</p>
+
+        <div class="payment-number" id="paynumber">
+            0717370783
+        </div>
+
+        <button class="btn" type="button" onclick="copyNumber()">
+            COPY PAYMENT NUMBER
+        </button>
+
+        <p class="note">
+            Confirm the registration fee and payment instructions
+            with the organizers before sending money.
+        </p>
+
+        <p class="note">
+            Automated payment prompts are not yet activated.
+            Do not treat a registration submission as proof of payment.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ORGANIZERS -->
+<section class="dark-section" id="contacts">
+
+    <h2 class="section-title">
+        CONTACT <span class="gold">ORGANIZERS</span>
+    </h2>
+
+    <div class="organizer">
+
+        <div class="emoji">👤</div>
+
+        <h3>Kemboi</h3>
+
+        <p>Chairperson</p>
+
+        <p>
+            <a href="tel:+254710190854">
+                +254 710 190854
+            </a>
+        </p>
+
+        <a class="btn"
+           href="https://wa.me/254710190854">
+            WHATSAPP CHAIRPERSON
+        </a>
+
+    </div>
+
+    <div class="organizer">
+
+        <div class="emoji">💳</div>
+
+        <h3>Doreen Chepkoech</h3>
+
+        <p>M-Pesa Payment Contact</p>
+
+        <p>
+            <a href="tel:0717370783">
+                0717370783
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>© 2026 <span>MKU KUTIT FUNDAY</span></p>
+
+    <p>07 November 2026 | MKU Graduation Square</p>
+
+    <p>Bringing people together through fun and entertainment.</p>
+
+</footer>
+
+<script>
+
+function copyNumber() {
+
+    const number = "0717370783";
+
+    if (navigator.clipboard && window.isSecureContext) {
+
+        navigator.clipboard.writeText(number)
+        .then(() => alert("Payment number copied!"))
+        .catch(() => alert("Payment number: " + number));
+
+    } else {
+
+        alert("Payment number: " + number);
+
+    }
+}
+
+const eventDate =
+    new Date("2026-11-07T00:00:00+03:00").getTime();
+
+function updateCountdown() {
+
+    const now = Date.now();
+    const distance = eventDate - now;
+
+    if (distance <= 0) {
+
+        document.querySelector(".countdown").innerHTML =
+        "<h2 class='gold'>THE FUNDAY IS HERE!</h2>";
+
+        return;
+    }
+
+    document.getElementById("days").textContent =
+        Math.floor(distance / 86400000);
+
+    document.getElementById("hours").textContent =
+        Math.floor((distance / 3600000) % 24);
+
+    document.getElementById("minutes").textContent =
+        Math.floor((distance / 60000) % 60);
+
+    document.getElementById("seconds").textContent =
+        Math.floor((distance / 1000) % 60);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+</script>
+
 </body>
 </html>
