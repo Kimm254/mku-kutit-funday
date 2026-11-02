@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MKU KUTIT FUNDAY 2026</title>
+
+<meta name="description" content="Join MKU KUTIT FUNDAY on 7th November 2026 at MKU Graduation Square. A day of fun, music, dance and entertainment.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #090909;
+    color: white;
+}
+
+header {
+    background: #111;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+    color: #ffb000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+nav a:hover { color: #ffb000; }
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    background:
+    linear-gradient(#000b, #000b),
+    radial-gradient(circle at center, #713400, #090909 70%);
+}
+
+.hero-content { max-width: 800px; }
+
+.tag {
+    color: #ffb000;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 85px);
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+h1 span { color: #ffb000; }
+
+.hero p {
+    margin: 22px 0;
+    color: #ddd;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #ffb000;
+    color: #111;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover { background: white; }
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #ffb000;
+    color: #ffb000;
+}
+
+section {
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.section-title span { color: #ffb000; }
+
+.description {
+    color: #bbb;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.time-box {
+    background: #191919;
+    border: 1px solid #444;
+    padding: 20px;
+    min-width: 85px;
+    border-radius: 12px;
+}
+
+.time-box strong {
+    display: block;
+    color: #ffb000;
+    font-size: 30px;
+}
+
+.time-box small { color: #aaa; }
+
+.details {
+    background: #111;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.card .emoji { font-size: 40px; }
+
+.card h3 {
+    color: #ffb000;
+    margin: 15px 0;
+}
+
+.card p {
+    color: #bbb;
+    line-height: 1.6;
+}
+
+.payment {
+    background: linear-gradient(135deg, #251500, #111);
+}
+
+.payment-number {
+    font-size: clamp(28px, 6vw, 43px);
+    color: #ffb000;
+    font-weight: bold;
+    margin: 25px 0;
+    letter-spacing: 2px;
+}
+
+.notice {
+    color: #bbb;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.contact {
+    background: #111;
+}
+
+footer {
+    background: #050505;
+    padding: 25px;
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+}
+
+footer span { color: #ffb000; }
+
+@media(max-width:600px) {
+    header { padding: 17px 5%; }
+    .logo { font-size: 16px; }
+    nav a { margin-left: 8px; font-size: 12px; }
+    section { padding: 60px 6%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MKU KUTIT FUNDAY</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#activities">Activities</a>
+        <a href="#payment">Payment</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="hero-content">
+        <div class="tag">THE BIG DAY IS COMING!</div>
+
+        <h1>MKU KUTIT <span>FUNDAY</span></h1>
+
+        <p>
+            One day. One community. Unlimited vibes.
+            Come together for fun, music, dance and unforgettable memories!
+        </p>
+
+        <h2 style="color:#ffb000;">07 NOVEMBER 2026</h2>
+        <p>📍 MKU Graduation Square</p>
+
+        <a href="#payment" class="btn">PAYMENT DETAILS</a>
+        <a href="#about" class="btn btn-outline">EXPLORE EVENT</a>
+
+        <div class="countdown">
+            <div class="time-box">
+                <strong id="days">00</strong>
+                <small>DAYS</small>
+            </div>
+            <div class="time-box">
+                <strong id="hours">00</strong>
+                <small>HOURS</small>
+            </div>
+            <div class="time-box">
+                <strong id="minutes">00</strong>
+                <small>MINUTES</small>
+            </div>
+            <div class="time-box">
+                <strong id="seconds">00</strong>
+                <small>SECONDS</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="about">
+    <h2 class="section-title">ABOUT <span>THE FUNDAY</span></h2>
+
+    <p class="description">
+        MKU KUTIT FUNDAY is all about bringing people together
+        through entertainment, friendship, creativity and fun.
+        Get ready for an exciting experience filled with good
+        vibes and memorable moments.
+    </p>
+</section>
+
+<section class="details" id="activities">
+    <h2 class="section-title">WHAT TO <span>EXPECT</span></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="emoji">🎧</div>
+            <h3>Music & DJs</h3>
+            <p>Enjoy great music and entertainment throughout the event.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💃</div>
+            <h3>Dance & Talent</h3>
+            <p>Showcase talent, dance and celebrate creativity.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🎮</div>
+            <h3>Games & Fun</h3>
+            <p>Enjoy exciting activities and friendly competitions.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🤝</div>
+            <h3>Networking</h3>
+            <p>Connect, interact and create unforgettable memories.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="payment" id="payment">
+    <h2 class="section-title">MAKE YOUR <span>PAYMENT</span></h2>
+
+    <p class="description">
+        Use the M-Pesa number below for Funday payments.
+    </p>
+
+    <div class="payment-number" id="paynumber">
+        0717370783
+    </div>
+
+    <button class="btn" onclick="copyNumber()">
+        COPY PAYMENT NUMBER
+    </button>
+
+    <p class="notice">
+        Confirm the required amount and payment details
+        with the event organizers before sending money.
+    </p>
+</section>
+
+<section class="contact">
+    <h2 class="section-title">SEE YOU <span>THERE!</span></h2>
+
+    <p class="description">
+        Get ready for an amazing day with MKU KUTIT.
+        Bring your energy and let's make memories!
+    </p>
+
+    <a href="tel:0717370783" class="btn">CONTACT ORGANIZERS</a>
+</section>
+
+<footer>
+    <p>© 2026 <span>MKU KUTIT FUNDAY</span></p>
+    <p>Bringing people together through fun and entertainment.</p>
+</footer>
+
+<script>
+function copyNumber() {
+    navigator.clipboard.writeText("0717370783")
+    .then(() => alert("Payment number copied successfully!"))
+    .catch(() => alert("Payment number: 0717370783"));
+}
+
+const eventDate = new Date("2026-11-07T00:00:00+03:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance <= 0) {
+        document.querySelector(".countdown").innerHTML =
+        "<h2 style='color:#ffb000'>THE FUNDAY IS HERE! 🎉</h2>";
+        return;
+    }
+
+    document.getElementById("days").textContent =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    document.getElementById("hours").textContent =
+        Math.floor((distance / (1000 * 60 * 60)) % 24);
+
+    document.getElementById("minutes").textContent =
+        Math.floor((distance / (1000 * 60)) % 60);
+
+    document.getElementById("seconds").textContent =
+        Math.floor((distance / 1000) % 60);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
